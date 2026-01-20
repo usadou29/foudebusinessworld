@@ -7,7 +7,7 @@ import type { CourseWithModules, Lesson } from '../types/course';
 import VideoPlayer from '../components/courses/VideoPlayer';
 import Button from '../components/ui/Button';
 import SEOHead from '../components/SEOHead';
-import { ChevronLeft, ChevronRight, Check, Lock } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Check } from 'lucide-react';
 
 export default function LessonViewer() {
     const { slug, lessonId } = useParams<{ slug: string; lessonId: string }>();
@@ -19,7 +19,6 @@ export default function LessonViewer() {
     const [course, setCourse] = useState<CourseWithModules | null>(null);
     const [currentLesson, setCurrentLesson] = useState<Lesson | null>(null);
     const [loading, setLoading] = useState(true);
-    const [hasPurchased, setHasPurchased] = useState(false);
     const [isCompleted, setIsCompleted] = useState(false);
 
     useEffect(() => {
@@ -37,7 +36,6 @@ export default function LessonViewer() {
 
             // Check if user purchased the course
             const purchased = await hasUserPurchasedCourse(courseData.id, user.id);
-            setHasPurchased(purchased);
 
             // Find the current lesson
             let foundLesson: Lesson | null = null;

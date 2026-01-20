@@ -1,8 +1,8 @@
 import { useAuth } from '../../context/AuthContext';
-import { PlayCircle, Clock } from 'lucide-react';
+import { PlayCircle } from 'lucide-react';
 
 export default function DashboardHome() {
-    const { user } = useAuth();
+    useAuth(); // Ensure user is authenticated
 
     return (
         <div>

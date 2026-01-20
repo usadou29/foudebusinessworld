@@ -11,10 +11,9 @@ import {
     X,
     User
 } from 'lucide-react';
-import Button from '../ui/Button';
 
 export default function DashboardLayout() {
-    const { t, i18n } = useTranslation('common');
+    const { i18n } = useTranslation('common');
     const { signOut, user } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();

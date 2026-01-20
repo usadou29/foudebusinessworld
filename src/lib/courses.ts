@@ -1,5 +1,5 @@
 import { supabase } from './supabase';
-import type { Course, CourseWithModules, CourseModuleWithLessons, UserLessonProgress } from '../types/course';
+import type { Course, CourseWithModules, UserLessonProgress } from '../types/course';
 
 /**
  * Fetch all published courses

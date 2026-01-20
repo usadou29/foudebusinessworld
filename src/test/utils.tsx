@@ -1,5 +1,6 @@
-import React, { ReactElement } from 'react';
-import { render, RenderOptions } from '@testing-library/react';
+import React, { type ReactElement } from 'react';
+import { render, type RenderOptions } from '@testing-library/react';
+export { screen, fireEvent, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { I18nextProvider } from 'react-i18next';
 import { HelmetProvider } from 'react-helmet-async';

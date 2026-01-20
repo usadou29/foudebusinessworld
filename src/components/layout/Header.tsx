@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Menu, X, Globe, User } from 'lucide-react';
 import Container from '../ui/Container';
@@ -11,7 +11,6 @@ export default function Header() {
     const { t, i18n } = useTranslation('common');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { user } = useAuth();
-    const location = useLocation();
 
     // Helper to close menu on navigation
     const closeMenu = () => setIsMenuOpen(false);

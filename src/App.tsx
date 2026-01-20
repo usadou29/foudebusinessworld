@@ -91,11 +91,9 @@ function App() {
 
             {/* Catch all for 404 inside layout */}
             <Route path="*" element={
-              <MainLayout>
-                <div className="flex items-center justify-center py-40 min-h-[50vh] bg-black">
-                  <h1 className="text-2xl text-white">404 - Page Not Found</h1>
-                </div>
-              </MainLayout>
+              <div className="flex items-center justify-center py-40 min-h-[50vh] bg-black">
+                <h1 className="text-2xl text-white">404 - Page Not Found</h1>
+              </div>
             } />
           </Route>
         </Routes>
