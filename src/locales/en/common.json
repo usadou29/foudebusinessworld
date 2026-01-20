@@ -1,0 +1,17 @@
+{
+    "welcome": "Welcome to FouDeBusinessWorld",
+    "tagline": "Your international business partner",
+    "menu": {
+        "home": "Home",
+        "services": "Services",
+        "programs": "Programs",
+        "about": "About",
+        "contact": "Contact"
+    },
+    "cta": {
+        "start": "Get Started"
+    },
+    "footer": {
+        "rights": "All rights reserved."
+    }
+}
