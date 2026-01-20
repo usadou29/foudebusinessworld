@@ -182,5 +182,25 @@
     "title": "Nos Formations",
     "subtitle": "Des programmes concrets et applicables immédiatement.",
     "cta": "Voir le programme"
+  },
+  "auth": {
+    "login": {
+      "subtitle": "Accédez à votre espace membre.",
+      "title": "Se connecter",
+      "email_label": "E-mail",
+      "no_account": "Pas encore de compte ?",
+      "password_label": "Mot de passe",
+      "register_link": "Créer un compte",
+      "submit": "Se connecter"
+    },
+    "register": {
+      "email_label": "E-mail",
+      "has_account": "Vous avez déjà un compte ?",
+      "login_link": "Se connecter",
+      "password_label": "Mot de passe",
+      "submit": "S'inscrire",
+      "subtitle": "Rejoignez la communauté FouDeBusinessWorld.",
+      "title": "Inscription"
+    }
   }
 }

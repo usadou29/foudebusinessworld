@@ -182,5 +182,25 @@
         "title": "Our Training Programs",
         "subtitle": "Concrete programs you can apply immediately.",
         "cta": "View Program"
+    },
+    "auth": {
+        "login": {
+            "title": "Login",
+            "subtitle": "Access your member area.",
+            "email_label": "Email",
+            "password_label": "Password",
+            "submit": "Sign In",
+            "no_account": "No account yet?",
+            "register_link": "Create an account"
+        },
+        "register": {
+            "title": "Register",
+            "subtitle": "Join the FouDeBusinessWorld community.",
+            "email_label": "Email",
+            "password_label": "Password",
+            "submit": "Sign Up",
+            "has_account": "Already have an account?",
+            "login_link": "Sign In"
+        }
     }
 }

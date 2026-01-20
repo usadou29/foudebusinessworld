@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X, Globe, User } from 'lucide-react';
 import Container from '../ui/Container';
 import Button from '../ui/Button';
 import LanguageSwitcher from '../LanguageSwitcher';
+import { useAuth } from '../../context/AuthContext';
 
 export default function Header() {
-    const { t } = useTranslation('common');
+    const { t, i18n } = useTranslation('common');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { user } = useAuth();
     const location = useLocation();
 
     // Helper to close menu on navigation
@@ -58,9 +60,16 @@ export default function Header() {
                 {/* Desktop Actions */}
                 <div className="hidden md:flex items-center gap-4">
                     <LanguageSwitcher />
-                    <Button variant="primary" size="sm" href="login">
-                        {t('menu.login')}
-                    </Button>
+                    {user ? (
+                        <Button variant="primary" size="sm" href={`/${i18n.language || 'fr'}/dashboard`} className="flex items-center gap-2">
+                            <User size={16} />
+                            Mon Espace
+                        </Button>
+                    ) : (
+                        <Button variant="primary" size="sm" href={`/${i18n.language || 'fr'}/login`}>
+                            {t('menu.login')}
+                        </Button>
+                    )}
                 </div>
 
                 {/* Mobile Menu Toggle */}
@@ -95,7 +104,7 @@ export default function Header() {
                             </NavLink>
                         ))}
                         <div className="mt-4 pt-4 border-t border-white/10">
-                            <Button href="login" fullWidth>
+                            <Button href={`/${i18n.language || 'fr'}/login`} fullWidth>
                                 {t('menu.login')}
                             </Button>
                         </div>
