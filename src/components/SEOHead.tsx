@@ -4,13 +4,15 @@ import { useTranslation } from 'react-i18next';
 interface SEOHeadProps {
     titleKey?: string;
     descriptionKey?: string;
+    title?: string;
+    description?: string;
 }
 
-export default function SEOHead({ titleKey, descriptionKey }: SEOHeadProps) {
+export default function SEOHead({ titleKey, descriptionKey, title: rawTitle, description: rawDesc }: SEOHeadProps) {
     const { t, i18n } = useTranslation();
 
-    const title = titleKey ? `${t(titleKey)} | FouDeBusinessWorld` : 'FouDeBusinessWorld';
-    const description = descriptionKey ? t(descriptionKey) : t('tagline');
+    const title = rawTitle || (titleKey ? `${t(titleKey)} | FouDeBusinessWorld` : 'FouDeBusinessWorld');
+    const description = rawDesc || (descriptionKey ? t(descriptionKey) : t('tagline'));
 
     return (
         <Helmet>

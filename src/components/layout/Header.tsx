@@ -15,9 +15,12 @@ export default function Header() {
     const closeMenu = () => setIsMenuOpen(false);
 
     const menuItems = [
-        { label: t('menu.home'), href: '' }, // Index route
+        { label: t('menu.home'), href: '' },
+        { label: t('menu.why_us'), href: 'why-us' },
+        { label: t('menu.countries'), href: 'countries' },
         { label: t('menu.services'), href: 'services' },
         { label: t('menu.programs'), href: 'programs' },
+        { label: t('menu.resources'), href: 'resources' },
         { label: t('menu.about'), href: 'about' },
         { label: t('menu.contact'), href: 'contact' },
     ];
@@ -56,7 +59,7 @@ export default function Header() {
                 <div className="hidden md:flex items-center gap-4">
                     <LanguageSwitcher />
                     <Button variant="primary" size="sm" href="login">
-                        {t('member_area')}
+                        {t('menu.login')}
                     </Button>
                 </div>
 
@@ -93,7 +96,7 @@ export default function Header() {
                         ))}
                         <div className="mt-4 pt-4 border-t border-white/10">
                             <Button href="login" fullWidth>
-                                {t('member_area')}
+                                {t('menu.login')}
                             </Button>
                         </div>
                     </nav>

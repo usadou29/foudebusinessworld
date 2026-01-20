@@ -3,6 +3,13 @@ import { useTranslation } from 'react-i18next';
 import Home from './pages/Home';
 import LanguageLayout from './components/LanguageLayout';
 import MainLayout from './components/layout/MainLayout';
+import WhyUs from './pages/WhyUs';
+import CountryHub from './pages/countries/CountryHub';
+import CountryDetail from './pages/countries/CountryDetail';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Services from './pages/Services';
+import Programs from './pages/Programs';
 
 function RootRedirect() {
   const { i18n } = useTranslation();
@@ -10,7 +17,6 @@ function RootRedirect() {
   return <Navigate to={`/${targetLang}`} replace />;
 }
 
-// Simple Placeholder for pages not yet implemented
 const PlaceholderPage = ({ title }: { title: string }) => (
   <div className="container mx-auto px-4 py-20 text-center">
     <h1 className="text-4xl text-brand-gold font-serif mb-4">{title}</h1>
@@ -28,11 +34,17 @@ function App() {
           <Route element={<MainLayout />}>
             <Route index element={<Home />} />
 
-            {/* V1 Route Placeholders */}
-            <Route path="about" element={<PlaceholderPage title="About Us" />} />
-            <Route path="services" element={<PlaceholderPage title="Our Services" />} />
-            <Route path="programs" element={<PlaceholderPage title="Training Programs" />} />
-            <Route path="contact" element={<PlaceholderPage title="Contact Us" />} />
+            {/* V1 Public Routes */}
+            <Route path="why-us" element={<WhyUs />} />
+            <Route path="countries" element={<CountryHub />} />
+            <Route path="countries/:slug" element={<CountryDetail />} />
+
+            <Route path="services" element={<Services />} />
+            <Route path="programs" element={<Programs />} />
+            <Route path="resources" element={<PlaceholderPage title="Resources & Blog" />} />
+
+            <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
             <Route path="login" element={<PlaceholderPage title="Member Area" />} />
 
             {/* Catch all for 404 inside layout */}
