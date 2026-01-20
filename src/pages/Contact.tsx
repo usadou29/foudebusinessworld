@@ -51,7 +51,7 @@ export default function Contact() {
                                     </div>
                                     <div>
                                         <p className="text-sm text-gray-500 uppercase tracking-wider">{t('contact_page.info.whatsapp')}</p>
-                                        <p className="text-lg text-white">+971 50 123 4567</p>
+                                        <p className="text-lg text-white">+33 6 89 46 00 12</p>
                                     </div>
                                 </div>
                             </div>
