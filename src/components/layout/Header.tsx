@@ -16,13 +16,12 @@ export default function Header() {
     // Helper to close menu on navigation
     const closeMenu = () => setIsMenuOpen(false);
 
-    const menuItems = [
+    const navItems = [
         { label: t('menu.home'), href: '' },
         { label: t('menu.why_us'), href: 'why-us' },
         { label: t('menu.countries'), href: 'countries' },
         { label: t('menu.services'), href: 'services' },
-        { label: t('menu.programs'), href: 'programs' },
-        { label: t('menu.resources'), href: 'resources' },
+        { label: t('courses.title'), href: 'courses' },
         { label: t('menu.about'), href: 'about' },
         { label: t('menu.contact'), href: 'contact' },
     ];
@@ -42,7 +41,7 @@ export default function Header() {
 
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex items-center gap-8">
-                    {menuItems.map((item) => (
+                    {navItems.map((item) => (
                         <NavLink
                             key={item.href}
                             to={item.href}
@@ -89,7 +88,7 @@ export default function Header() {
             {isMenuOpen && (
                 <div className="md:hidden absolute top-20 left-0 right-0 bg-brand-surface border-b border-white/10 animate-fade-in">
                     <nav className="flex flex-col p-4 gap-2">
-                        {menuItems.map((item) => (
+                        {navItems.map((item) => (
                             <NavLink
                                 key={item.href}
                                 to={item.href}

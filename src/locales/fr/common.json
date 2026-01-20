@@ -202,5 +202,30 @@
       "subtitle": "Rejoignez la communauté FouDeBusinessWorld.",
       "title": "Inscription"
     }
+  },
+  "courses": {
+    "title": "Formations",
+    "all_courses": "Toutes les formations",
+    "filter_by_level": "Filtrer par niveau",
+    "search_placeholder": "Rechercher une formation...",
+    "level": {
+      "beginner": "Débutant",
+      "intermediate": "Intermédiaire",
+      "advanced": "Avancé"
+    },
+    "duration": "{{hours}}h de contenu",
+    "lessons_count": "{{count}} leçons",
+    "modules_count": "{{count}} modules",
+    "buy": "Acheter - {{price}}€",
+    "start": "Commencer",
+    "continue": "Continuer",
+    "mark_complete": "Marquer comme terminé",
+    "completed": "Terminé",
+    "free_preview": "Aperçu gratuit",
+    "locked": "Verrouillé",
+    "progress": "Progression : {{percentage}}%",
+    "course_content": "Contenu du cours",
+    "what_you_learn": "Ce que vous allez apprendre",
+    "no_courses": "Aucune formation disponible"
   }
 }

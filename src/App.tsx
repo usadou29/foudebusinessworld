@@ -20,6 +20,11 @@ import Register from './pages/auth/Register';
 import DashboardLayout from './components/layout/DashboardLayout';
 import DashboardHome from './pages/dashboard/DashboardHome';
 
+// Courses
+import Courses from './pages/Courses';
+import CourseDetail from './pages/CourseDetail';
+import LessonViewer from './pages/LessonViewer';
+
 function RootRedirect() {
   const { i18n } = useTranslation();
   const targetLang = i18n.language || 'fr';
@@ -60,7 +65,18 @@ function App() {
               {/* Auth Routes */}
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register />} />
+
+              {/* Course Routes */}
+              <Route path="courses" element={<Courses />} />
+              <Route path="courses/:slug" element={<CourseDetail />} />
             </Route>
+
+            {/* Protected Lesson Viewer */}
+            <Route path="courses/:slug/lessons/:lessonId" element={
+              <RequireAuth>
+                <LessonViewer />
+              </RequireAuth>
+            } />
 
             {/* Protected Dashboard Routes */}
             <Route path="dashboard" element={

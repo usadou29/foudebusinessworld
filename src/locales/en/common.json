@@ -202,5 +202,30 @@
             "has_account": "Already have an account?",
             "login_link": "Sign In"
         }
+    },
+    "courses": {
+        "title": "Courses",
+        "all_courses": "All Courses",
+        "filter_by_level": "Filter by level",
+        "search_placeholder": "Search for a course...",
+        "level": {
+            "beginner": "Beginner",
+            "intermediate": "Intermediate",
+            "advanced": "Advanced"
+        },
+        "duration": "{{hours}}h of content",
+        "lessons_count": "{{count}} lessons",
+        "modules_count": "{{count}} modules",
+        "buy": "Buy - €{{price}}",
+        "start": "Start",
+        "continue": "Continue",
+        "mark_complete": "Mark as complete",
+        "completed": "Completed",
+        "free_preview": "Free preview",
+        "locked": "Locked",
+        "progress": "Progress: {{percentage}}%",
+        "course_content": "Course content",
+        "what_you_learn": "What you'll learn",
+        "no_courses": "No courses available"
     }
 }
