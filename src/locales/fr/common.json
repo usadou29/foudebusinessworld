@@ -11,7 +11,65 @@
   "cta": {
     "start": "Commencer"
   },
+  "member_area": "Espace Membre",
   "footer": {
-    "rights": "Tous droits réservés."
+    "rights": "Tous droits réservés.",
+    "links": {
+      "privacy": "Politique de confidentialité",
+      "terms": "CGV / CGU",
+      "legal": "Mentions légales"
+    },
+    "columns": {
+      "countries": "Pays",
+      "company": "Entreprise",
+      "contact": "Contact"
+    },
+    "disclaimer": "Mentions légales : À but éducatif uniquement."
+  },
+  "home": {
+    "hero": {
+      "title_prefix": "Construisez Votre Business",
+      "title_highlight": "International",
+      "title_suffix": "Légalement & Stratégiquement",
+      "subtitle": "Dubaï · Chine · Géorgie — Rejoignez l'élite francophone pour la création, l'import-export et l'optimisation.",
+      "cta_start": "Commencer la formation",
+      "cta_call": "Réserver un appel"
+    },
+    "pillars": {
+      "dubai": {
+        "title": "Dubaï",
+        "desc": "Formation en ligne par pays et thème. Maîtrise de la création et fiscalité.",
+        "cta": "Explorer Dubaï"
+      },
+      "china": {
+        "title": "Chine",
+        "desc": "Coaching personnalisé pour la création, l'import-export et le sourcing.",
+        "cta": "Explorer la Chine"
+      },
+      "georgia": {
+        "title": "Géorgie",
+        "desc": "Support premium sur place à Tbilissi. Banque et création de société.",
+        "cta": "Explorer la Géorgie"
+      }
+    },
+    "why": {
+      "title": "Pourquoi FouDeBusinessWorld ?",
+      "expertise": {
+        "title": "Expertise Globale",
+        "desc": "Stratégies vérifiées pour 3 hubs économiques majeurs."
+      },
+      "legal": {
+        "title": "Sécurisé & Légal",
+        "desc": "Conformité avant tout. Pas de zones grises."
+      },
+      "results": {
+        "title": "Résultats Réels",
+        "desc": "Études de cas concrètes et étapes actionnables."
+      },
+      "community": {
+        "title": "Communauté Premium",
+        "desc": "Réseau d'entrepreneurs sérieux."
+      }
+    }
   }
 }

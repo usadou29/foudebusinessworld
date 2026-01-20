@@ -2,5 +2,36 @@
 
 @theme {
     --color-brand-gold: #D4AF37;
-    --color-brand-dark: #1a1a1a;
+    --color-brand-gold-light: #F4CF57;
+    --color-brand-dark: #0f0f0f;
+    --color-brand-gray: #1a1a1a;
+    --color-brand-surface: #252525;
+
+    --font-sans: "Inter", system-ui, sans-serif;
+    --font-serif: "Playfair Display", serif;
+
+    --animate-fade-in: fade-in 0.5s ease-out;
+    --animate-slide-up: slide-up 0.5s ease-out;
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slide-up {
+        from {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
 }

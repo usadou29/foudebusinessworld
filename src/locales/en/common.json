@@ -11,7 +11,65 @@
     "cta": {
         "start": "Get Started"
     },
+    "member_area": "Member Area",
     "footer": {
-        "rights": "All rights reserved."
+        "rights": "All rights reserved.",
+        "links": {
+            "privacy": "Privacy Policy",
+            "terms": "Terms of Service",
+            "legal": "Legal Notice"
+        },
+        "columns": {
+            "countries": "Countries",
+            "company": "Company",
+            "contact": "Contact"
+        },
+        "disclaimer": "Legal Disclaimer: Educational purposes only."
+    },
+    "home": {
+        "hero": {
+            "title_prefix": "Build Your International",
+            "title_highlight": "Business",
+            "title_suffix": "Legally & Strategically",
+            "subtitle": "Dubai · China · Georgia — Join the elite francophone network for setup, import-export, and optimization.",
+            "cta_start": "Start Your Training",
+            "cta_call": "Book a Call"
+        },
+        "pillars": {
+            "dubai": {
+                "title": "Dubai",
+                "desc": "Online training tailored by country and topic. Setup & Taxation mastery.",
+                "cta": "Explore Dubai"
+            },
+            "china": {
+                "title": "China",
+                "desc": "Personalized coaching for setup, import-export, and sourcing.",
+                "cta": "Explore China"
+            },
+            "georgia": {
+                "title": "Georgia",
+                "desc": "Premium on-ground support in Tbilisi. Banking & Corporate setup.",
+                "cta": "Explore Georgia"
+            }
+        },
+        "why": {
+            "title": "Why FouDeBusinessWorld?",
+            "expertise": {
+                "title": "Global Expertise",
+                "desc": "Verified strategies for 3 major economic hubs."
+            },
+            "legal": {
+                "title": "Secure & Legal",
+                "desc": "Compliance focused. No shady grey zones."
+            },
+            "results": {
+                "title": "Real Results",
+                "desc": "Concrete case studies and actionable steps."
+            },
+            "community": {
+                "title": "Premium Community",
+                "desc": "Network with serious entrepreneurs."
+            }
+        }
     }
 }
