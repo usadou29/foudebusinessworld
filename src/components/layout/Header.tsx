@@ -16,38 +16,36 @@ export default function Header() {
     const closeMenu = () => setIsMenuOpen(false);
 
     const navItems = [
-        { label: t('menu.home'), href: '' },
-        { label: t('menu.why_us'), href: 'why-us' },
-        { label: t('menu.countries'), href: 'countries' },
-        { label: t('menu.services'), href: 'services' },
-        { label: t('courses.title'), href: 'courses' },
-        { label: t('menu.about'), href: 'about' },
-        { label: t('menu.contact'), href: 'contact' },
+        { label: 'HOME', href: '' },
+        { label: 'WHY FOUDEBUSINESSWORLD', href: 'why-us' },
+        { label: 'COUNTRIES', href: 'countries' },
+        { label: 'SERVICES', href: 'services' },
+        { label: 'TRAINING PROGRAMS', href: 'programs' },
+        { label: 'RESOURCES', href: 'resources' },
+        { label: 'ABOUT', href: 'about' },
+        { label: 'CONTACT', href: 'contact' },
     ];
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-white/10">
+        <header className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-xl border-b border-white/5">
             <Container className="flex items-center justify-between h-20">
                 {/* Logo */}
                 <Link to="." className="flex items-center gap-2" onClick={closeMenu}>
-                    <div className="h-8 w-8 bg-brand-gold rounded-full flex items-center justify-center">
-                        <Globe className="h-5 w-5 text-brand-dark" />
-                    </div>
-                    <span className="text-xl font-serif font-bold text-white tracking-wide">
+                    <span className="text-sm font-bold text-white tracking-[0.2em] uppercase">
                         FouDeBusiness<span className="text-brand-gold">World</span>
                     </span>
                 </Link>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden md:flex items-center gap-8">
+                <nav className="hidden xl:flex items-center gap-6">
                     {navItems.map((item) => (
                         <NavLink
                             key={item.href}
                             to={item.href}
                             end={item.href === ''}
                             className={({ isActive }) => `
-                text-sm font-medium transition-colors duration-200
-                ${isActive ? 'text-brand-gold' : 'text-gray-300 hover:text-white'}
+                text-[10px] font-bold tracking-[0.15em] transition-all duration-300 uppercase
+                ${isActive ? 'text-brand-gold' : 'text-gray-400 hover:text-white'}
               `}
                         >
                             {item.label}
@@ -56,16 +54,15 @@ export default function Header() {
                 </nav>
 
                 {/* Desktop Actions */}
-                <div className="hidden md:flex items-center gap-4">
+                <div className="hidden xl:flex items-center gap-4">
                     <LanguageSwitcher />
                     {user ? (
-                        <Button variant="primary" size="sm" href={`/${i18n.language || 'fr'}/dashboard`} className="flex items-center gap-2">
-                            <User size={16} />
-                            Mon Espace
+                        <Button variant="outline" size="sm" href={`/${i18n.language || 'fr'}/dashboard`} className="!text-[10px]">
+                            {t('menu.dashboard') || 'DASHBOARD'}
                         </Button>
                     ) : (
-                        <Button variant="primary" size="sm" href={`/${i18n.language || 'fr'}/login`}>
-                            {t('menu.login')}
+                        <Button variant="outline" size="sm" href={`/${i18n.language || 'fr'}/login`} className="!text-[10px]">
+                            {t('menu.login').toUpperCase()}
                         </Button>
                     )}
                 </div>

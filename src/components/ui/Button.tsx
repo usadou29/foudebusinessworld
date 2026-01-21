@@ -17,19 +17,19 @@ const Button: React.FC<ButtonProps> = ({
     className = '',
     ...props
 }) => {
-    const baseStyles = "inline-flex items-center justify-center rounded transition font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
+    const baseStyles = "inline-flex items-center justify-center transition-all duration-300 font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed tracking-wide uppercase text-xs";
 
     const variants = {
-        primary: "bg-brand-gold text-brand-dark hover:bg-brand-gold-light focus:ring-brand-gold",
-        secondary: "bg-white text-brand-dark hover:bg-gray-100 focus:ring-white",
-        outline: "border border-brand-gold text-brand-gold hover:bg-brand-gold/10 focus:ring-brand-gold",
-        ghost: "text-gray-300 hover:text-white hover:bg-white/5 focus:ring-gray-500",
+        primary: "bg-brand-gold text-brand-dark hover:bg-brand-gold-light hover:scale-105 active:scale-95 shadow-lg shadow-brand-gold/20",
+        secondary: "bg-white text-brand-dark hover:bg-gray-100 hover:scale-105 active:scale-95",
+        outline: "border border-brand-gold/50 text-brand-gold hover:bg-brand-gold hover:text-brand-dark hover:scale-105 active:scale-95",
+        ghost: "text-gray-300 hover:text-white hover:bg-white/5",
     };
 
     const sizes = {
-        sm: "px-3 py-1.5 text-sm",
-        md: "px-6 py-2.5 text-base",
-        lg: "px-8 py-3.5 text-lg",
+        sm: "px-4 py-2",
+        md: "px-8 py-3",
+        lg: "px-10 py-4 text-sm",
     };
 
     const classes = `
