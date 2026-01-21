@@ -16,14 +16,14 @@ export default function Header() {
     const closeMenu = () => setIsMenuOpen(false);
 
     const navItems = [
-        { label: 'HOME', href: '' },
-        { label: 'WHY FOUDEBUSINESSWORLD', href: 'why-us' },
-        { label: 'COUNTRIES', href: 'countries' },
-        { label: 'SERVICES', href: 'services' },
-        { label: 'TRAINING PROGRAMS', href: 'programs' },
-        { label: 'RESOURCES', href: 'resources' },
-        { label: 'ABOUT', href: 'about' },
-        { label: 'CONTACT', href: 'contact' },
+        { label: t('menu.home').toUpperCase(), href: '' },
+        { label: t('menu.why_us').toUpperCase(), href: 'why-us' },
+        { label: t('menu.countries').toUpperCase(), href: 'countries' },
+        { label: t('menu.services').toUpperCase(), href: 'services' },
+        { label: t('menu.programs').toUpperCase(), href: 'programs' },
+        { label: t('menu.resources').toUpperCase(), href: 'resources' },
+        { label: t('menu.about').toUpperCase(), href: 'about' },
+        { label: t('menu.contact').toUpperCase(), href: 'contact' },
     ];
 
     return (
@@ -58,7 +58,7 @@ export default function Header() {
                     <LanguageSwitcher />
                     {user ? (
                         <Button variant="outline" size="sm" href={`/${i18n.language || 'fr'}/dashboard`} className="!text-[10px]">
-                            {t('menu.dashboard') || 'DASHBOARD'}
+                            {(t('menu.dashboard') || 'DASHBOARD').toUpperCase()}
                         </Button>
                     ) : (
                         <Button variant="outline" size="sm" href={`/${i18n.language || 'fr'}/login`} className="!text-[10px]">

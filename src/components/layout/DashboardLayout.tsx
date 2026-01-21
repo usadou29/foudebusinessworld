@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 
 export default function DashboardLayout() {
-    const { i18n } = useTranslation('common');
+    const { t, i18n } = useTranslation('common');
     const { signOut, user } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
@@ -28,9 +28,9 @@ export default function DashboardLayout() {
     };
 
     const navItems = [
-        { label: 'Tableau de bord', path: `/${lang}/dashboard`, icon: <LayoutDashboard size={20} /> },
-        { label: 'Mes Formations', path: `/${lang}/dashboard/courses`, icon: <GraduationCap size={20} /> },
-        { label: 'Profil & Paramètres', path: `/${lang}/dashboard/settings`, icon: <Settings size={20} /> },
+        { label: t('menu.dashboard') || 'Tableau de bord', path: `/${lang}/dashboard`, icon: <LayoutDashboard size={20} /> },
+        { label: t('menu.programs') || 'Mes Formations', path: `/${lang}/dashboard/courses`, icon: <GraduationCap size={20} /> },
+        { label: t('menu.settings') || 'Profil & Paramètres', path: `/${lang}/dashboard/settings`, icon: <Settings size={20} /> },
     ];
 
     const isActive = (path: string) => location.pathname === path;
@@ -75,7 +75,7 @@ export default function DashboardLayout() {
                         className="w-full flex items-center gap-3 px-4 py-2 text-red-400 hover:bg-red-500/10 rounded-lg transition-colors text-sm"
                     >
                         <LogOut size={18} />
-                        Déconnexion
+                        {t('menu.logout') || 'Déconnexion'}
                     </button>
                 </div>
             </aside>
@@ -111,7 +111,7 @@ export default function DashboardLayout() {
                                 className="w-full flex items-center gap-3 px-4 py-3 text-red-400 hover:bg-red-500/10 rounded-lg transition-colors"
                             >
                                 <LogOut size={20} />
-                                Déconnexion
+                                {t('menu.logout') || 'Déconnexion'}
                             </button>
                         </nav>
                     </div>

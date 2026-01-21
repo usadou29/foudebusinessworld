@@ -13,7 +13,8 @@
         "login": "Member Area"
     },
     "cta": {
-        "start": "Get Started"
+        "start": "Get Started",
+        "learn_more": "Learn More"
     },
     "member_area": "Member Area",
     "footer": {

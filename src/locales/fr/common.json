@@ -13,7 +13,8 @@
     "login": "Espace Membre"
   },
   "cta": {
-    "start": "Commencer"
+    "start": "Commencer",
+    "learn_more": "En savoir plus"
   },
   "member_area": "Espace Membre",
   "footer": {
