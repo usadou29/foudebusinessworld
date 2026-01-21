@@ -1,16 +1,16 @@
-import { useTranslation } from 'react-i18next';
+
 import SEOHead from '../components/SEOHead';
 import Button from '../components/ui/Button';
 import Container from '../components/ui/Container';
 import Section from '../components/ui/Section';
-import Card from '../components/ui/Card';
+
 
 // Assets
 const HERO_BG = "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070&auto=format&fit=crop";
-const SECONDARY_HERO_BG = "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop";
+
 
 export default function Home() {
-    const { t } = useTranslation('common');
+
 
     return (
         <div className="bg-brand-dark min-h-screen text-white">

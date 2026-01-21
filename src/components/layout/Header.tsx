@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Menu, X, Globe, User } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import Container from '../ui/Container';
 import Button from '../ui/Button';
 import LanguageSwitcher from '../LanguageSwitcher';
