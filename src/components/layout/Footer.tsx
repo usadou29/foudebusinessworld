@@ -1,69 +1,203 @@
-import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import Container from '../ui/Container';
-import { Globe, Mail, Phone } from 'lucide-react';
+import { 
+    Mail, 
+    Phone, 
+    MapPin, 
+    Instagram, 
+    Linkedin, 
+    Youtube,
+    ArrowRight
+} from 'lucide-react';
+
+const footerLinks = {
+    services: [
+        { label: 'Création société', href: '/services/company' },
+        { label: 'Sourcing Chine', href: '/services/sourcing' },
+        { label: 'Canton Fair', href: '/services/canton' },
+        { label: 'E-commerce', href: '/services/ecommerce' },
+        { label: 'Formations', href: '/courses' },
+    ],
+    countries: [
+        { label: 'Dubaï', href: '/countries/dubai' },
+        { label: 'Hong Kong', href: '/countries/hong-kong' },
+        { label: 'Géorgie', href: '/countries/georgia' },
+        { label: 'Tous les pays', href: '/countries' },
+    ],
+    company: [
+        { label: 'À propos', href: '/about' },
+        { label: 'Pourquoi nous', href: '/why-us' },
+        { label: 'Blog', href: '/resources' },
+        { label: 'Contact', href: '/contact' },
+    ],
+    legal: [
+        { label: 'Mentions légales', href: '/legal' },
+        { label: 'Politique de confidentialité', href: '/privacy' },
+        { label: 'CGV', href: '/terms' },
+    ]
+};
 
 export default function Footer() {
-    const { t } = useTranslation('common');
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-black border-t border-white/10 py-12 text-sm text-gray-400">
-            <Container>
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-                    {/* Brand */}
-                    <div className="col-span-1 md:col-span-1">
-                        <Link to="." className="flex items-center gap-2 mb-4 text-white">
-                            <Globe className="h-5 w-5 text-brand-gold" />
-                            <span className="font-serif font-bold">FouDeBusinessWorld</span>
+        <footer className="bg-brand-darker border-t border-white/5">
+            {/* Newsletter Section */}
+            <div className="border-b border-white/5">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                    <div className="grid lg:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 className="text-2xl md:text-3xl font-serif font-medium mb-4">
+                                Recevez nos meilleures opportunités
+                            </h3>
+                            <p className="text-gray-400">
+                                Inscrivez-vous à notre newsletter et soyez toujours en avance sur les autres entrepreneurs.
+                            </p>
+                        </div>
+                        <form className="flex gap-4">
+                            <input
+                                type="email"
+                                placeholder="Votre email"
+                                className="flex-1 px-4 py-3 bg-white/5 border border-white/10 rounded-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-gold/50 transition-colors"
+                            />
+                            <button
+                                type="submit"
+                                className="px-6 py-3 premium-gradient text-black font-semibold rounded-sm hover:shadow-gold transition-all flex items-center gap-2"
+                            >
+                                S'inscrire
+                                <ArrowRight className="w-4 h-4" />
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            {/* Main Footer */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-12">
+                    {/* Brand Column */}
+                    <div className="col-span-2 md:col-span-4 lg:col-span-1">
+                        <Link to="/" className="flex items-center gap-3 mb-6">
+                            <img
+                                src="/assets/logo.png"
+                                alt="FouDeBusinessWorld"
+                                className="h-10 w-auto"
+                            />
                         </Link>
-                        <p className="mb-4">{t('tagline')}</p>
+                        <p className="text-gray-400 text-sm mb-6 leading-relaxed">
+                            Votre partenaire privilégié pour créer et développer votre business à l'international.
+                        </p>
+                        {/* Social Links */}
+                        <div className="flex items-center gap-3">
+                            {[
+                                { icon: <Instagram className="w-5 h-5" />, href: '#', label: 'Instagram' },
+                                { icon: <Linkedin className="w-5 h-5" />, href: '#', label: 'LinkedIn' },
+                                { icon: <Youtube className="w-5 h-5" />, href: '#', label: 'YouTube' },
+                            ].map((social, idx) => (
+                                <a
+                                    key={idx}
+                                    href={social.href}
+                                    aria-label={social.label}
+                                    className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-brand-gold hover:text-black transition-all"
+                                >
+                                    {social.icon}
+                                </a>
+                            ))}
+                        </div>
                     </div>
 
-                    {/* Programs */}
+                    {/* Services */}
                     <div>
-                        <h4 className="font-bold text-white mb-4 uppercase tracking-wider text-xs">{t('footer.columns.countries')}</h4>
-                        <ul className="space-y-2">
-                            <li><Link to="programs?country=dubai" className="hover:text-brand-gold">{t('home.pillars.dubai.title')}</Link></li>
-                            <li><Link to="programs?country=china" className="hover:text-brand-gold">{t('home.pillars.china.title')}</Link></li>
-                            <li><Link to="programs?country=georgia" className="hover:text-brand-gold">{t('home.pillars.georgia.title')}</Link></li>
+                        <h4 className="font-semibold text-white mb-4">Services</h4>
+                        <ul className="space-y-3">
+                            {footerLinks.services.map((link, idx) => (
+                                <li key={idx}>
+                                    <Link
+                                        to={link.href}
+                                        className="text-gray-400 hover:text-brand-gold transition-colors text-sm"
+                                    >
+                                        {link.label}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Countries */}
+                    <div>
+                        <h4 className="font-semibold text-white mb-4">Pays</h4>
+                        <ul className="space-y-3">
+                            {footerLinks.countries.map((link, idx) => (
+                                <li key={idx}>
+                                    <Link
+                                        to={link.href}
+                                        className="text-gray-400 hover:text-brand-gold transition-colors text-sm"
+                                    >
+                                        {link.label}
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
                     {/* Company */}
                     <div>
-                        <h4 className="font-bold text-white mb-4 uppercase tracking-wider text-xs">{t('footer.columns.company')}</h4>
-                        <ul className="space-y-2">
-                            <li><Link to="about" className="hover:text-brand-gold">{t('menu.about')}</Link></li>
-                            <li><Link to="contact" className="hover:text-brand-gold">{t('menu.contact')}</Link></li>
-                            <li><Link to="privacy" className="hover:text-brand-gold">{t('footer.links.privacy')}</Link></li>
-                            <li><Link to="terms" className="hover:text-brand-gold">{t('footer.links.terms')}</Link></li>
+                        <h4 className="font-semibold text-white mb-4">Entreprise</h4>
+                        <ul className="space-y-3">
+                            {footerLinks.company.map((link, idx) => (
+                                <li key={idx}>
+                                    <Link
+                                        to={link.href}
+                                        className="text-gray-400 hover:text-brand-gold transition-colors text-sm"
+                                    >
+                                        {link.label}
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
                     {/* Contact */}
                     <div>
-                        <h4 className="font-bold text-white mb-4 uppercase tracking-wider text-xs">{t('footer.columns.contact')}</h4>
-                        <ul className="space-y-2">
-                            <li className="flex items-center gap-2">
-                                <Mail size={16} className="text-brand-gold" />
-                                <a href="mailto:contact@foudebusinessworld.com" className="hover:text-white">contact@foudebusiness.com</a>
+                        <h4 className="font-semibold text-white mb-4">Contact</h4>
+                        <ul className="space-y-3">
+                            <li className="flex items-start gap-3 text-gray-400 text-sm">
+                                <Mail className="w-4 h-4 mt-0.5 text-brand-gold" />
+                                <span>contact@foudebusinessworld.com</span>
                             </li>
-                            <li className="flex items-center gap-2">
-                                <Phone size={16} className="text-brand-gold" />
-                                <span>+33 6 89 46 00 12</span>
+                            <li className="flex items-start gap-3 text-gray-400 text-sm">
+                                <Phone className="w-4 h-4 mt-0.5 text-brand-gold" />
+                                <span>+33 1 23 45 67 89</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-gray-400 text-sm">
+                                <MapPin className="w-4 h-4 mt-0.5 text-brand-gold" />
+                                <span>Dubaï, Émirats Arabes Unis</span>
                             </li>
                         </ul>
                     </div>
                 </div>
+            </div>
 
-                <div className="pt-8 border-t border-white/10 text-center md:text-left flex flex-col md:flex-row justify-between items-center bg-black">
-                    <p>&copy; {currentYear} FouDeBusinessWorld. {t('footer.rights')}</p>
-                    <p className="mt-2 md:mt-0 opacity-50 text-xs">
-                        {t('footer.disclaimer')}
-                    </p>
+            {/* Bottom Bar */}
+            <div className="border-t border-white/5">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                        <p className="text-gray-500 text-sm">
+                            © {currentYear} FouDeBusinessWorld. Tous droits réservés.
+                        </p>
+                        <div className="flex items-center gap-6">
+                            {footerLinks.legal.map((link, idx) => (
+                                <Link
+                                    key={idx}
+                                    to={link.href}
+                                    className="text-gray-500 hover:text-gray-400 transition-colors text-sm"
+                                >
+                                    {link.label}
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
                 </div>
-            </Container>
+            </div>
         </footer>
     );
 }
